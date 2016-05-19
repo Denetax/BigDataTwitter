@@ -24,3 +24,7 @@ body{
     //max-height:650px;
     //overflow:auto;
 }
+
+.alignCenter{
+    text-align: center;
+}

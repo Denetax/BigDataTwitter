@@ -18,21 +18,22 @@
 </head>
     <body>
         <div class="row" style="text-align: center;">
-          <div class="col-md-8 colonne">
-                <h1>Tweet</h1>
+          <div id="blockTopTweet" class="col-md-8 colonne">
                 <div class="MainContainer">
                 <table id="InfoGfi" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                      <tr>
-                        <th>Tweet</th>
-                        <th>Retweet</th>
-                        <th>Date</th>
+                         <th class="alignCenter">Tweet</th>
+                         <th class="alignCenter">Auteur</th>
+                         <th class="alignCenter">Retweet</th>
+                         <th class="alignCenter">Date</th>
                      </tr>
                     </thead>
                     <tbody>
                     {% for t in Tweet %}
                         <tr>
                             <td>{{ t.tweet }}</td>
+                            <td>{{ t.tweetos }}</td>
                             <td>{{ t.retweet }}</td>
                             <td>{{ t.date }}</td>
                         </tr>
@@ -41,12 +42,62 @@
                 </table>
                 </div>
            </div>
+            <div id="blockTopFollowers" style="display:none;"class="col-md-8 colonne">
+                <div class="MainContainer">
+                <table id="InfoGfiFollowers" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                     <tr>
+                        <th class="alignCenter">Abonné </th>
+                        <th class="alignCenter">Tweet</th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for t in tabData %}
+                          <tr>
+                            <td>{{ t }}</td>
+                            <td>{{ tabData[t] }}</td>
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+                </div>
+           </div>
+         <div id="blockTopPays" style="display:none;"class="col-md-8 colonne">
+                <div class="MainContainer">
+                <table id="InfoGfiPays" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                     <tr>
+                        <th class="alignCenter">Pays / Ville </th>
+                        <th class="alignCenter">Nombre Tweet</th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for t in tabDataPays %}
+                          <tr>
+                            <td>{{ t }}</td>
+                            <td>{{ tabDataPays[t] }}</td>
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+                </div>
+           </div>
           <div class="col-md-4 colonne">
-              <img src="../static/img/Gfi.png">
+              <img src="../static/img/Gfi.png" style="width:300px;">
               <h1> Informations utiles </h1>
               <p>Nombre de tweets = {{ Count.nbrTweet }}</p>
-              <p>Nombre d'abonnements  = {{ Count.nbrTweet }}</p>
-              <p>Nombre d'abonnés = {{ Count.nbrAbonner }}</p>
+              <p>Nombre de personne ayant tweeter gfi = {{ Count.nbrPeopleTweet }}</p>
+              <p>Nombre de personne du 2nd niveau touché = {{ Count.nbrPeopleToucher }}</p>
+              <p>Nombre de pays ayant tweeter gfi = {{ Count.nbrPaysTweet }}</p>
+             <!--<p>Nombre d'abonnements  = {{ Count.nbrTweet }}</p>-->
+             <!-- <p>Nombre d'abonnés = {{ Count.nbrTweet }}</p>-->
+              <div>
+                   <ul class="nav nav-pills">
+                       <li id="TopTweet" class="active"><a href="#">Top Tweet</a></li>
+                       <li id="TopFollowers" ><a href="#">Top Followers</a></li>
+                       <li id="TopPays" ><a href="#">Top Pays</a></li>
+                  </ul>
+              </div>
           </div>
         </div>
     </body>
