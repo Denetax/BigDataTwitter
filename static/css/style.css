@@ -1,0 +1,16 @@
+body{
+    //background-color:gray;
+}
+
+.colonne{
+    border: 1px solid cornflowerblue;
+}
+
+.contain{
+   // padding:10px;
+    border-top:1px solid black;
+}
+
+rightContainer{
+    border-left:1px solid black;
+}

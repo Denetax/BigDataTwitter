@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <link href="../static/Modules/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Title</title>
+    <link href="../static/css/style.css" rel="stylesheet">
+    <title>BigDataTwitter</title>
 </head>
     <body>
         <div class="row" style="text-align: center;">
-          <div class="col-md-4">Tweet</div>
-          <div class="col-md-4">Retweet</div>
-          <div class="col-md-4">Abonnement</div>
+          <div class="col-md-8 colonne">
+              <h1>Tweet</h1>
+                {% for t in Tweet %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ t.name }}
+                        </div>
+                        <div class="col-md-6 rightContainer">
+                            {{ t.date }}
+                        </div>
+                    </div>
+                {% endfor %}
+           </div>
+          <div class="col-md-4 colonne">
+              <h1> Information utile </h1>
+              <p>Nombre de tweet = {{ Count }}</p>
+          </div>
         </div>
     </body>
 </html>

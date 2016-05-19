@@ -13,9 +13,13 @@ def query():
 
 @app.route('/')
 def index():
-    print(query().find_one())
-    print("poifhjef")
-    return render_template("Home.html")
+    # = query().find_one()
+    Tweet = []
+    Count = query().count()
+    for element in query().find({},{"name":1,"date":1, "_id":0}):
+        if element != {}:
+            Tweet.append(element)
+    return render_template("Home.html",Tweet=Tweet,Count=Count)
 
 if __name__== '__main__':
     app.run(debug=True)
