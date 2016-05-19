@@ -1,9 +1,10 @@
 body{
-    //background-color:gray;
+    padding:50px;
 }
 
 .colonne{
     border: 1px solid #c48200;
+    padding: 25px;
 }
 
 .contain{

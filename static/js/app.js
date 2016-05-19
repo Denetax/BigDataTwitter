@@ -6,6 +6,11 @@ $(document).ready(function() {
     $('#InfoGfi').DataTable();
     $('#InfoGfiFollowers').DataTable();
     $('#InfoGfiPays').DataTable();
+    $('#BlockInformation').DataTable({
+        "paging": false,
+        "searching": false
+    }
+    );
 
     $( "#TopTweet" ).click(function() {
         $("#TopTweet").attr("class","active");
