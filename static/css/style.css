@@ -14,3 +14,13 @@ body{
 .rightContainer{
     border-left:1px solid #c48200;
 }
+
+.ligneContainer{
+    border-top:1px solid #c48200;
+    padding:10px;
+}
+
+.MainContainer{
+    //max-height:650px;
+    //overflow:auto;
+}
