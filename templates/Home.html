@@ -11,19 +11,22 @@
           <div class="col-md-8 colonne">
               <h1>Tweet</h1>
                 {% for t in Tweet %}
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row" style="border-top:1px solid #c48200;padding:10px;">
+                        <div class="col-md-10">
                             {{ t.name }}
                         </div>
-                        <div class="col-md-6 rightContainer">
+                        <div class="col-md-2 rightContainer">
                             {{ t.date }}
                         </div>
                     </div>
                 {% endfor %}
            </div>
           <div class="col-md-4 colonne">
+              <img src="../static/img/Gfi.png">
               <h1> Information utile </h1>
-              <p>Nombre de tweet = {{ Count }}</p>
+              <p>Nombre de tweets = {{ Count.nbrTweet }}</p>
+              <p>Nombre d'abonnements  = {{ Count.nbrTweet }}</p>
+              <p>Nombre d'abonnés = {{ Count.nbrAbonner }}</p>
           </div>
         </div>
     </body>

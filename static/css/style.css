@@ -3,14 +3,14 @@ body{
 }
 
 .colonne{
-    border: 1px solid cornflowerblue;
+    border: 1px solid #c48200;
 }
 
 .contain{
-   // padding:10px;
-    border-top:1px solid black;
+    padding:10px;
+    border-top:1px solid #c48200;
 }
 
-rightContainer{
-    border-left:1px solid black;
+.rightContainer{
+    border-left:1px solid #c48200;
 }

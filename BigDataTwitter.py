@@ -15,11 +15,16 @@ def query():
 def index():
     # = query().find_one()
     Tweet = []
-    Count = query().count()
-    for element in query().find({},{"name":1,"date":1, "_id":0}):
-        if element != {}:
+    Count = {}
+    Count["nbrAbonner"] = query().find().count()
+    yo = query().find({},{"name":1,"date":1, "_id":0})
+    for element in yo:
+        print(element)
+        if "date" in element :
             Tweet.append(element)
+        Count["nbrTweet"] = len(Tweet)
     return render_template("Home.html",Tweet=Tweet,Count=Count)
 
 if __name__== '__main__':
     app.run(debug=True)
+
