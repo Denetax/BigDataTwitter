@@ -6,13 +6,16 @@ app = Flask(__name__)
 
 def query():
     client = MongoClient('localhost', 27017)
-    db = client['BigDataTwitter']
-    return db['data']
+    #db = client['BigDataTwitter']
+    db = client.BigDataTwitter
+    collection = db.data
+    return collection
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    print(query().find_one())
+    print("poifhjef")
+    return render_template("Home.html")
 
-
-if __name__ == '__main__':
+if __name__== '__main__':
     app.run(debug=True)
